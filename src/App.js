@@ -19,9 +19,23 @@ export default function App() {
         <Route exact exact path="/">
           <Home />
         </Route>
-        <Route path="/page1">
-          <Page1 />
-        </Route>
+        <Route
+          path="/page1"
+          render={() => (
+            <Switch>
+              <Route exact path="/page1">
+                <Page1 />
+              </Route>
+              <Route path="/page1/detailA">
+                <Page1DetailA />
+              </Route>
+              <Route path="/page1/detailB">
+                <Page1DetailB />
+              </Route>
+            </Switch>
+          )}
+        />
+
         <Route path="/page2">
           <Page2 />
         </Route>
