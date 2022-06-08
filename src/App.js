@@ -16,10 +16,12 @@ export default function App() {
         <Link to="/Page2">Page2</Link>
       </div>
       <Switch>
-        <Route exact path="/">
+        <Route exact exact path="/">
           <Home />
         </Route>
-        <Route path="/page1" render={() => <Page1 />}></Route>
+        <Route path="/page1">
+          <Page1 />
+        </Route>
         <Route path="/page2">
           <Page2 />
         </Route>
